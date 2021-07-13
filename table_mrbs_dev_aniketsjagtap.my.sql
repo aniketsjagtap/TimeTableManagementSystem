@@ -420,10 +420,10 @@ CREATE TABLE mrbs_course
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-alter table mrbs_entry add column faculty(255);
-alter table mrbs_entry add column division(255);
-alter table mrbs_entry add column course(255);
+alter table mrbs_entry add faculty varchar(255);
+alter table mrbs_entry add division varchar(255);
+alter table mrbs_entry add course varchar(255);
 
-alter table mrbs_repeat add column faculty(255);
-alter table mrbs_repeat add column division(255);
-alter table mrbs_repeat add column course(255);
+alter table mrbs_repeat add faculty varchar(255);
+alter table mrbs_repeat add division varchar(255);
+alter table mrbs_repeat add course varchar(255);
