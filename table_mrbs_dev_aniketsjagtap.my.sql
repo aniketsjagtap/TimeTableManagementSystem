@@ -379,6 +379,11 @@ UNLOCK TABLES;
 
 -- Dump completed on 2021-07-13 11:19:32
 
+-- if want to drop table and giving error for foreign_key dependancy then,
+-- SET FOREIGN_KEY_CHECKS=0;
+-- Make sure to
+-- SET FOREIGN_KEY_CHECKS=1;
+-- after.
 
 alter table mrbs_repeat add registrant_limit_enabled tinyint(1);
 alter table mrbs_repeat add registration_opens int(11);
