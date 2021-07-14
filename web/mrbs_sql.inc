@@ -45,14 +45,14 @@ function mrbsCheckFreeFaculty($faculty, $start_time, $end_time){
 		ORDER BY start_time 
 		LIMIT 1";
 	*/
-	$sql = "SELECT F.name FROM "._tbl('entry')." E, mdl_user F 
+	$sql = "SELECT F.username FROM "._tbl('entry')." E, mdl_user F 
                 WHERE E.faculty = F.id
                 AND start_time < ?
                 AND end_time > ?
                 AND E.faculty = ?
                 ORDER BY start_time 
                 LIMIT 1";
-
+	
 	$sql_params = array($start_time, $end_time, $faculty);
 	$res = db()->query($sql,$sql_params);
 	$err = array();
@@ -1845,16 +1845,17 @@ function get_area_names($all=FALSE)
 // Returns NULL if $faculty_id does not exist.
 function get_faculty_details($faculty_id)
 {
-  /*$sql = "SELECT *
+  $sql = "SELECT *
             FROM " . _tbl('faculty') . "
            WHERE id=?
            LIMIT 1";
-*/
+/*
   $sql = "SELECT *
             FROM mdl_user
            WHERE id=?
            LIMIT 1";
-  $res = db()->query($sql, array($faculty_id));
+ */ 
+ $res = db()->query($sql, array($faculty_id));
 
   return ($res->count() == 0) ? null : $res->next_row_keyed();
 }
@@ -1881,7 +1882,12 @@ function get_course_details($course_id)
             FROM " . _tbl('course') . "
            WHERE id=?
            LIMIT 1";
-  
+ /*
+  $sql = "SELECT * 
+            FROM mdl_course
+           WHERE id=?
+           LIMIT 1";
+  */
   $res = db()->query($sql, array($course_id));
   
   return ($res->count() == 0) ? null : $res->next_row_keyed();

@@ -82,7 +82,7 @@ $fields = db()->field_info(_tbl('entry'));
 $custom_fields = array();
 
 // Fill $edit_entry_field_order with not yet specified entries.
-$entry_fields = array('create_by', 'name', 'faculty', 'course', 'division', 'description', 'start_time', 'end_time', 'room_id',
+$entry_fields = array('create_by','name', 'faculty', 'course', 'division', 'description', 'start_time', 'end_time', 'room_id',
                       'type', 'confirmation_status', 'privacy_status');
 
 foreach ($entry_fields as $field)
@@ -182,6 +182,7 @@ function get_field_course($disabled = false)
 {
 //$sql = "SELECT name FROM "._tbl('course');
 $sql = "SELECT fullname FROM mdl_course where format='topics'";
+
 $res = db()->query_array($sql);
   $element = new ElementDiv();
 
