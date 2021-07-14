@@ -618,8 +618,10 @@ print_header($context);
 
 if(is_admin()){
 echo "<div>";
+  /* 14 June 2021
   addFacultyForm();
   getAllFaculty();
+  */
   addDivisionForm();
   getAllDivision();
   addCourseForm();

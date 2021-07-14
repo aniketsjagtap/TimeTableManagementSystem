@@ -130,7 +130,8 @@ function get_field_create_by($create_by, $disabled=false)
 
 function get_field_faculty($disabled = false)
 {
-$sql = "SELECT id,name FROM "._tbl('faculty');
+//$sql = "SELECT id,name FROM "._tbl('faculty');
+$sql = "SELECT mdl_user.id, mdl_user.username FROM mdl_user, mdl_role_assignments where mdl_user.id = mdl_role_assignments.userid and mdl_role_assignments.roleid IN ('2','3','4');" ;
 $res = db()->query_array1($sql);
 //print_r($res);
   $element = new ElementDiv();
