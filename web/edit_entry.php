@@ -180,7 +180,8 @@ $res = db()->query_array1($sql);
 
 function get_field_course($disabled = false)
 {
-$sql = "SELECT name FROM "._tbl('course');
+//$sql = "SELECT name FROM "._tbl('course');
+$sql = "SELECT fullname FROM mdl_course where format='topics'";
 $res = db()->query_array($sql);
   $element = new ElementDiv();
 

@@ -624,8 +624,10 @@ echo "<div>";
   */
   addDivisionForm();
   getAllDivision();
+  /*
   addCourseForm();
   getAllCourses();
+  */
 echo "</div>";
 
 }
